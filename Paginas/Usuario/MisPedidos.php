@@ -2,11 +2,13 @@
 
 session_start();
 
+$idUP = $_SESSION['usuario']; 
+
     include("../../Conection/cn.php");
        
 ?>
 <?php
-    session_start();
+    
 
        
  ?>
@@ -17,21 +19,22 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
+    <title>Mis Pedidos</title>
     <?php
     include("../../Layout/estilos.php");
+    include '../../Layout/navbarU.php';
     ?>
 </head>
 <body>
 
 
 <div class="container mt-3">
-    <h3 class= "text text-center">Creadores</h3>
+    <h3 class= "text text-center">Mis Pedidos</h3>
 
 
  
 <?php
-    $query = "select * from pedidos";
+    $query = "select * from pedidos where id_usuario = $idUP";
     $pedidos = $db->query($query);
  
 ?>
@@ -52,7 +55,6 @@ session_start();
                             <li class='list-group-item'> <span style="font-weight: bold;">Estado:</span> <?php echo $row_pedidos['estado'];?></li>
 
                           
-                            <a href='../../Transacciones/ConfirmarEntrega.php?idPedido= <?php echo $row_pedidos['id_pedido']; ?>' class='btn btn-primary'>Confirmar Entrega</a>
                             
                         </span> 
                             

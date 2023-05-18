@@ -99,8 +99,8 @@ include("../Carrito/modal_cart.php");
 </td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['titulo'] ?></td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] ?>€</td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']; ?>€</td>
+<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] ?>$</td>
+<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']; ?></td>
 </tr>    
 
 <?php
@@ -117,7 +117,7 @@ include("../Carrito/modal_cart.php");
 <!-- mas iva -->
 
                 <li class="list-group-item d-flex justify-content-between">
-                <span  style="text-align: left; color: #000000;"><strong>Total (EUR)</strong></span>
+                <span  style="text-align: left; color: #000000;"><strong>Total (MEX)</strong></span>
                 <?php
                 if(isset($_SESSION['carrito'])){
                 $total=0;
@@ -128,31 +128,10 @@ include("../Carrito/modal_cart.php");
                 }
                 }}}
                 if(!isset($total)){$total = '0';}else{ $total = $total;}
-                echo number_format($total, 2, ',', '.');  ?> €
+                echo number_format($total, 2, ',', '.');  ?> $
                 </li>
 
 
-                <li class="list-group-item d-flex justify-content-between">
-                <span  style="text-align: left; color: #000000;"><strong>I.V.A. (EUR)</strong></span>
-                <span class="grey-text font-weight-bold" style="font-size:14px;">
-                <?php $masiva = $total / 1.21; 
-                $totaliva = $total - $masiva; 
-                echo number_format($totaliva, 2, '.', '.');
-                ?>€
-                </span>
-                </li>
-
-
-                <li class="list-group-item d-flex justify-content-between">
-                <span  style="text-align: left; color: #000000;"><strong>Total + I.V.A. (EUR)</strong></span>
-                <span class="grey-text font-weight-bold" style="font-size:14px;">
-                <strong  style="text-align: left; color: #000000;">
-                <?php $totalfinal = $total + $totaliva; 
-                echo number_format($totalfinal, 2, '.', '.');
-                ?>€
-                </strong>
-                </span>
-                </li>
 
 
 
@@ -170,7 +149,7 @@ include("../Carrito/modal_cart.php");
 <div class="container p-5">
 <form class="row g-3 needs-validation" action="pagar.php" method="POST" novalidate>
 
-<p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Datos de envío</p>
+<p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Quien recibira el paquete?</p>
 
 <input type="hidden" name="dato" value="insertar" >
   <div class="col-md-6">

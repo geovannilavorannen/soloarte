@@ -11,34 +11,46 @@ if(isset($_SESSION['carrito'])){
     }
 
 
+
             if(isset($_SESSION['carrito'])){
+                $articulosConcatenados = '';
+                $total_precio = 0;
             $total=0;
-            for($i=0;$i<=count($carrito_mio)-1;$i ++){
+            for($i=0;$i<=count($carrito_mio);$i ++){
                 if(isset($carrito_mio[$i])){
                 if($carrito_mio[$i]!=NULL){
         
                     $cantidad = $carrito_mio[$i]['cantidad'];
                     $articulo = $carrito_mio[$i]['titulo'];
                     $precio = $carrito_mio[$i]['precio'];
-                    $total_precio = $precio * $cantidad;
+                    
                     $estado = "Falta metodo pago";
+                    $fecha = date("Y-m-d");
 
-                    $sql = "insert into pedidos (cantidad,articulo,precio,total,estado,id_usuario)                           
-                    values(?,?,?,?,?,?)";
-                    $cmd = $db->prepare($sql);
-                    $res = $cmd->execute([$cantidad,$articulo,$precio,$total_precio,$estado,$idUsu]);
+                  
+                    $articulosConcatenados .= $cantidad . ' ' . $articulo . ', ';
+                    
+                    $cantitadArt +=1;
+                    $totalpagr += $total_precio + $carrito_mio[$i]['precio'];;
 
-                   // $sql_actualizar = "UPDATE productos
-                     //  SET cantidad = cantidad - ?
-                       //WHERE nombre = ?";
-                    //$cmd_actualizar = $db->prepare($sql_actualizar);
-                     //$res_actualizar = $cmd_actualizar->execute([$cantidad, $id_producto]);
-
+                    $sql_actualizar = "update productos set stock = stock - ? WHERE nombre = ?";
+                    $cmd_actualizar = $db->prepare($sql_actualizar);
+                    $res_actualizar = $cmd_actualizar->execute([$cantidad, $articulo]);
+                    
+                    //insertar pedido 
                     
            
             }
             }
             }
+            $articulosConcatenados = rtrim($articulosConcatenados, ', ');
+
+            $cantitadArt -=1;
+            $total_precio += $total_precio;// tambien agregar el poter
+                $sql = "insert into pedidos (cantidad,articulo,precio,total,estado,id_usuario,fecha_pedido)                           
+                values(?,?,?,?,?,?,?)";
+                $cmd = $db->prepare($sql);
+                $res = $cmd->execute([$cantitadArt,$articulosConcatenados,$totalpagr,$total_precio,$estado,$idUsu,$fecha]);
             }
 
 
