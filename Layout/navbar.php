@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class=" navbar  navbar-dark bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
       <span class="navbar-toggler-icon"></span>
@@ -13,14 +13,24 @@
           <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Credores</a>
+          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Craedores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../Transacciones/cerrarSesion.php">Cerrar Sesión</a>
-        </li>
+
+        <?php if (isset($_SESSION['nombre'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+          </li>
+        <?php endif ?>
+        
+        <?php if (!$_SESSION) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="Paginas/login.php">Iniciar Sesion</a>
+          </li>
+        <?php endif ?>
+
       </ul>
     </div>
   </div>

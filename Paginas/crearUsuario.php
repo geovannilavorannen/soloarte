@@ -48,7 +48,7 @@
                                         <h4 class="mt-1 mb-3 pb-1">Registrate</h4>
                                     </div>
 
-                                    <form action="../Transacciones//crearUsuario.php" onsubmit="validarPasswords(event);" method="POST" id="crearUsuario">
+                                    <form action="../Transacciones/crearUsuario.php" onsubmit="validarPasswords(event);" method="POST" id="crearUsuario">
 
                                         <div class="row g-0">
                                             <div class="form-outline mb-4 col-lg-4  p-1">

@@ -12,7 +12,7 @@
         header("Location: NoAutorizado.php");
 
     }
-
+       
  ?>
 <!DOCTYPE html>
 <html lang="en">

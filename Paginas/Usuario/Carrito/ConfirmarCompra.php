@@ -1,5 +1,8 @@
 <?php  session_start();
 
+include("../../../Layout/navbarU.php");
+       
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +25,7 @@
  <link rel="stylesheet" href="../css/style_cp.css">
 
 
-<title>Consulta basica</title>
+<title>Finalizar Compra</title>
 </head>
 <body>
 

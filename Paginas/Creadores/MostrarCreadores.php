@@ -2,11 +2,10 @@
 
 //session_start();
 
-    include("../../Conection/cn.php");
+    
        
 ?>
 <?php
-   // session_start();
 
     if (!isset($_SESSION['usuario'])){
         header("Location: NoAutenticado.php");
@@ -25,6 +24,8 @@
     <title>Mostrar Creadores</title>
     <?php
     include("../../Layout/estilos.php");
+    include '../../Layout/navbarU.php';
+    include("../../Conection/cn.php");
     ?>
 </head>
 <body>

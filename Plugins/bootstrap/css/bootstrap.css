@@ -45,6 +45,12 @@
   }
 }
 
+.bodyBgImage {
+  background-image: url('../../../Images/CB1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-font-sans-serif);
@@ -4871,7 +4877,108 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
+/*Botones personalizados*/
+
+.btn-outline-azulmaya {
+  color: #107896;
+  border-color: #0d6efd;
+}
+
 /*Chat Boot*/
+        /* Estilos generales */
+        .container {
+          max-width: 100%;
+          padding: 0 20px;
+      }
+      
+      .chatbox {
+          background: #fff;
+          border-radius: 5px;
+          padding: 20px;
+          margin-top: 20px;
+      }
+      
+      .header {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      
+      .header h4 {
+          margin: 0;
+      }
+      
+      .body {
+          height: 300px;
+          overflow-y: auto;
+          margin-bottom: 20px;
+      }
+      
+      .scroller {
+          height: 100%;
+      }
+      
+      .chat {
+          display: flex;
+          justify-content: space-between;
+      }
+      
+      .chat input[type="text"],
+      .chat input[type="submit"] {
+          padding: 10px;
+          font-size: 14px;
+          border-radius: 5px;
+          border: none;
+      }
+      
+      .chat input[type="text"] {
+          flex-grow: 1;
+          margin-right: 10px;
+      }
+      
+      .chat input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          cursor: pointer;
+      }
+      
+      /* Estilos responsivos */
+      @media (max-width: 768px) {
+          .chatbox {
+              padding: 10px;
+          }
+      
+          .body {
+              height: 200px;
+          }
+      
+          .chat input[type="text"],
+          .chat input[type="submit"] {
+              font-size: 12px;
+          }
+        }
+.mensaje-icono {
+  position: fixed;
+  bottom: 20px; /* Ajusta la posición vertical según tus necesidades */
+  right: 20px; /* Ajusta la posición horizontal según tus necesidades */
+  z-index: 9999; /* Asegúrate de que el ícono aparezca encima de otros elementos */
+  cursor: pointer;
+}
+
+.chatbot-contenedor {
+  position: fixed;
+  bottom: 50px; /* Ajusta la posición vertical según tus necesidades */
+  right: 50px; /* Ajusta la posición horizontal según tus necesidades */
+  z-index: 9999; /* Asegúrate de que el chat bot aparezca encima de otros elementos */
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  height: 400px; /* Ajusta la altura según tus necesidades */
+  background-color: #ffffff; /* Ajusta el color de fondo según tus necesidades */
+  border-radius: 10px; /* Ajusta el radio del borde según tus necesidades */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ajusta la sombra según tus necesidades */
+  display: none; /* Oculta el chat bot por defecto */
+}
+
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8453,6 +8560,29 @@ input[type="submit"] {
 .text-reset {
   color: inherit !important;
 }
+/* Colores del dia de muertos*/
+
+
+.bg-naranja-mex {
+  background-color: #FF7300 !important;
+}
+
+.bg-rosaMX {
+  background-color: #E4007F !important;
+}
+
+.bg-azulmaya {
+  background-color: #107896 !important;
+}
+
+.bg-amarillo-oro {
+  background-color: #FFC300 !important;
+}
+
+.bg-verde-mex {
+  background-color: #00A99D !important;
+}
+
 
 .bg-negro {
   background-color: #000000 !important;

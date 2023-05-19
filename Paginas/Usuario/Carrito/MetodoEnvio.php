@@ -1,5 +1,6 @@
-<?php  session_start();
-include("../Admin/conexion.php");
+<?php  
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ include("../Admin/conexion.php");
  <link rel="stylesheet" href="../css/style_cp.css">
 
 
-<title>Consulta basica</title>
+<title>Metodo de envio</title>
 </head>
 <body>
 
@@ -45,36 +46,20 @@ include("../Admin/conexion.php");
 <!-- NAVBAR -->
 <?php 
 
-include("../Carrito/nav_cart.php");
-include("../Carrito/modal_cart.php");
-
+include '../../../Layout/navbarU.php';
 
 ?>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<a type="button" class="btn btn-primary my-4" href="javascript:history.back()">Regresar</a>
+    <a type="button" class="btn btn-success my-4" href="../Carrito/ConfirmarCompra.php">Ya casi es tuyo</a>
 
 
 <!-- vista E -->
 <div class="center mt-5">
     <div class="card pt-3" >
-            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Portes de envio</p>
+            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Metodo de envio</p>
         <div class="container-fluid p-2">
           
           
@@ -82,7 +67,7 @@ include("../Carrito/modal_cart.php");
             
                         <form id="formulario" name="formulario" method="post" action="cart.php">
                         <div class="blog-post ">
-                        <img src="../Carrito de compra paso 1/img/portes.jpg" alt="Man">
+                        <img src="../../../Images/FedEx.png" alt="Man">
                         <a target="_blank" class="category">
                         200 MEX
                         </a>
@@ -104,7 +89,7 @@ include("../Carrito/modal_cart.php");
 
                         <form id="formulario" name="formulario" method="post" action="cart.php">
                         <div class="blog-post ">
-                        <img src="../Carrito de compra paso 1/img/portes.jpg" alt="Man">
+                        <img src="../../../Images/dhl.jpg" alt="Man">
                         <a target="_blank" class="category">
                         150 MEX
                         </a>
@@ -114,7 +99,7 @@ include("../Carrito/modal_cart.php");
                         <input name="titulo" type="hidden" id="titulo" value="Porter de envio: Empresa 002" />
                         <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
                         <div class="card-body">
-                        <h5 class="card-title">HDL</h5>
+                        <h5 class="card-title">DHL</h5>
                         <p>48h.</p>
                         <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Seleccionar envio</button>
                         </div>
@@ -126,7 +111,7 @@ include("../Carrito/modal_cart.php");
 
                         <form id="formulario" name="formulario" method="post" action="cart.php">
                         <div class="blog-post ">
-                        <img src="../../../Images/..." alt="Man">
+                        <img src="../../../Images/CM.png" alt="Man">
                         <a target="_blank" class="category">
                         GRATIS
                         </a>
@@ -149,8 +134,7 @@ include("../Carrito/modal_cart.php");
 
       
     </div>
-    <a type="button" class="btn btn-primary my-4" href="javascript:history.back()">Regresar</a>
-    <a type="button" class="btn btn-success my-4" href="../Carrito/ConfirmarCompra.php">Ya casi es tuyo</a>
+
      
     
 </div>

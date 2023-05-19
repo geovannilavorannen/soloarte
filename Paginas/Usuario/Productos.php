@@ -24,6 +24,7 @@
     <?php include '../../Layout/navbarU.php';
 
 
+
     include("../Usuario/Carrito/nav_cart.php");
     include("../Usuario/Carrito/modal_cart.php");
 
@@ -33,6 +34,11 @@
 
 
 
+    <div id="botonFlotante" style="position: fixed; bottom: 20px; right: 20px; display: block;">
+        <a href="../Chat/Ayuda.php" class="btn btn bg bg-rosaMX">
+            <img src="../../Images/Chat/chat.jpg" alt="chat" width="52" height="52">
+        </a>
+    </div>
     <div class="container mt-4">
 
         <h1 class="text text-center">Productos</h1>
@@ -46,7 +52,6 @@
 
         <div class='row'>
             <?php while ($row_productos = $productos->fetch_assoc()) :  ?>
-                <!-- <div class='col-4 mt-4'> -->
                 <div class='col-sm-12 col-md-4 d-flex justify-content-center mt-4 mb-4'>
                     <!-- <div class='col-sm-16 col-md-4'>	 -->
                     <div class='card' style='width: 18rem;'>
@@ -60,11 +65,15 @@
                             <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos['stock']; ?><span></span></li>
 
 
-                            <a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos['id_producto']; ?>' class='btn btn-primary'>Mas Detalles</a>
-
-                            <a href='../Usuario//Carrito/ProductoSeleccionado.php?idProducto= <?php echo $row_productos['id_producto']; ?>' class='btn btn-success fas fa-shopping-cart'></i></a>
 
 
+
+                            <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
+                                <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
+                                <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
+                                <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+                                <button class="btn btn-outline-primary bg bg-azulmaya" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                            </form>
                             </span>
 
 
@@ -72,6 +81,7 @@
                         </ul>
                     </div>
                 </div>
+
             <?php endwhile ?>
 
         </div>
